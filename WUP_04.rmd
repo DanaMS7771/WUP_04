@@ -59,7 +59,12 @@ model1 <- aov(WORDSUM~DEGREE,data=GSScsv)
 summary.aov(model1)
 ```
     the P value is very very low and this doesn't help us analyze the data.
-
+```{r}
+#we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
+par(mar = c(3, 16, 2, 2))
+plot(TukeyHSD(model1),las=2)
+```
+    Based on this data, the difference between LT high school and graduate is significantly big ( LT-graduates= a high negative number ) and this shows that the scores for gradates are the highest in this data set and it's the lowest for LT high school. The differences between the rest are by far lower.
 
 # Discussion and Conclusion
 
