@@ -5,12 +5,16 @@ date: "Spring 2024"
 output:
   html_document:
     df_print: paged
+  pdf_document: default
 ---
 
 ```{r include=FALSE,echo=FALSE}
 require(knitr)
 require(tidyverse)
 require(tigerstats)
+
+GSScsv <-read.csv(file="GSScsv.csv")
+
 
 ```
 
@@ -38,9 +42,12 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 
 ```{r}
 basicCN <- ggplot(GSScsv,aes(x=DEGREE,y=WORDSUM))
+```
 
+```{r}
 basicCN + geom_boxplot()
 ```
+    
     The median for graduates is the highest(and the values in general) , meaning they"re the ones who are most likely to pass Wordsum. LT high school has the lowest scores for passing Wordsum test.
 
 ### Numerical Descriptive Results
